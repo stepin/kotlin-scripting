@@ -2,6 +2,8 @@
 
 This repo simplifies work with Kotlin scripts.
 
+Docker image also have bash, unzip, and jq for scripts.
+
 ## Dockerfile use case
 
 ```Dockerfile
