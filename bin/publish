@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+cd "$(dirname "$0")"
+
+cd ..
+
+VERSION=$(git describe --tags --always)
+IMAGE_LATEST="stepin/kotlin-scripting"
+IMAGE="$IMAGE_LATEST:$VERSION"
+
+docker buildx create --use
+docker buildx build --push --platform linux/amd64,linux/arm64 . -t "$IMAGE" -t "$IMAGE_LATEST"
