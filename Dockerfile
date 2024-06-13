@@ -1,4 +1,9 @@
-FROM eclipse-temurin:21-jre
+FROM debian:bookworm
+
+# Install JRE
+ENV JAVA_HOME=/opt/java/openjdk
+COPY --from=eclipse-temurin:21-jre $JAVA_HOME $JAVA_HOME
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Install unzip for compiler unpack and jq just in case it will be useful
 RUN apt-get update \
