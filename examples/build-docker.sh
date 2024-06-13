@@ -5,4 +5,4 @@ set -x
 
 docker build . -t kotlin-scripting-example
 
-docker run --rm -i kotlin-scripting-example
+docker run --rm -i -v "$(PWD):/data" -w /data -u "$(id -u)" kotlin-scripting-example
