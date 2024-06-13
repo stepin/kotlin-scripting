@@ -2,7 +2,7 @@
 ///bin/echo >/dev/null <<EOC
 /*
 EOC
-kotlinc -script -Xplugin="${KOTLIN_HOME}/lib/kotlinx-serialization-compiler-plugin.jar" "$0" "$@"
+kotlinc -script -Xplugin="${KOTLIN_HOME}/lib/kotlinx-serialization-compiler-plugin.jar" -- "$0" "$@"
 exit $?
 */
 // NOTE: this script is for Kotlin 2.0 as kotlinx-serialization-json:1.7.0 require it
