@@ -11,7 +11,7 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/*
 
 # Install Kotlin compiler
-ARG KOTLINC_VERSION="2.0.0"
+ARG KOTLINC_VERSION="2.1.10"
 RUN wget -q "https://github.com/JetBrains/kotlin/releases/download/v$KOTLINC_VERSION/kotlin-compiler-$KOTLINC_VERSION.zip" && \
     unzip "kotlin-compiler-$KOTLINC_VERSION.zip" -d /usr/lib && \
     rm "kotlin-compiler-$KOTLINC_VERSION.zip"
